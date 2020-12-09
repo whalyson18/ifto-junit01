@@ -90,6 +90,80 @@ class MathUtilTest {
         
         final int obtido = mdc(b, c);
         
-        System.out.println("Esperado: " + esperado + " Ob");
+        //System.out.println("Esperado: " + esperado + " Obtido: " + obtido);
+
+        assertEquals(esperado, obtido);
+    }
+
+    @Test
+    void testMdcP5Resultado1(){
+        final int a = 7;
+        final int b = 3;
+        final int c = 5;
+        
+        final int esperado = 1;
+        
+        final int obtido = mdc(b, c);
+        
+        //System.out.println("Esperado: " + esperado + " Obtido: " + obtido);
+
+        assertEquals(esperado, obtido);
+
+    }
+
+    @Test
+    void testMdcP6(){
+        final int a = 8;
+        final int b = 2;
+
+        final int esperado = mdc(a, b);
+        final int obtido = mdc(b, a);
+
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMscP7TudoNegativo(){
+        final int a = -12;
+        final int b = -6;
+        final int esperado = 6;
+        final int obtido = mdc(a, b);
+        
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcP8(){
+        final int a = 8;
+        final int b = 8;
+
+        final int esperado = a;
+        final int obtido = mdc(a, b);
+
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcP9(){
+        final int a = 12;
+        final int b = 6;
+        final int c = 2;
+
+        final int esperado = 2;
+        final int obtido1 = mdc(a, mdc(b, c));
+        final int obtido2 = mdc(mdc(a, b), c);
+        //System.out.println("Esperado: " + obtido1 + " Obtido: " + obtido2);
+        assertEquals(obtido1, obtido2);
+    }
+    
+    @Test
+    void testMdcP12(){
+        final int p = 11;
+        final int a = 6;
+
+        final int esperado = 1;
+        final int obtido = mdc(p, a);
+        //System.out.println("Esperado: " + esperado + " Obtido: " + obtido);
+        assertEquals(esperado, obtido);
     }
 }
