@@ -14,6 +14,11 @@ public class MathUtil {
         if(b > 0 && a % b == 0){
             return b;
         }
+        
+        if(b == 0){
+            return Math.abs(a);
+        }
+        
         return -1;
     }
 }
