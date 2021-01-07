@@ -166,4 +166,33 @@ class MathUtilTest {
         //System.out.println("Esperado: " + esperado + " Obtido: " + obtido);
         assertEquals(esperado, obtido);
     }
+    
+    @Test
+    void testMdcGeralIndivisiveis(){
+        final int a = 30;
+        final int b = 12;
+        final int esperado = 6;
+        final int obtido = mdc(a, b);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcMultiplosValores(){
+        final int a = 30;
+        final int b = 12;
+        final int c = 4;
+        final int esperado = 2;
+        final int obtido = mdc(a, b, c);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcNenhumParametro(){
+        assertThrows(IllegalArgumentException.class, () -> mdc());
+    }
+    
+    @Test
+    void testMdcNulo(){
+        assertThrows(NullPointerException.class, () -> mdc(null));
+    }
 }
